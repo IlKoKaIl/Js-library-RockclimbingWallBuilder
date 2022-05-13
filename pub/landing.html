@@ -1,0 +1,162 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Rock-Climbing Wall Builder</title>
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+		<style>
+			
+			*{
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			
+			body{
+				height: 100vh;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			#header{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				background-color: #db3636c9;
+				color: #ffffff;
+				font-size: 40px;
+				font-family: 'Rubik Bubbles', cursive;
+				height: 140px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			#content{
+				height: 100vh;
+				background-image: url(img/landing-bg.png);
+				background-size: 65%;
+			}
+			
+			#content .overlay{
+				display: flex;
+				height: 100%;
+				align-items: center;
+				justify-content: center;
+				background-color: #00000042;
+			}
+			
+			#content .overlay .center{
+				padding: 30px;
+				background-color: #000000c9;
+				border-radius: 10px;
+			}
+			
+			#content .text, #content .features{
+				font-family: 'Kanit', sans-serif;
+				font-weight: 500;
+				color: #ffffff;
+				margin-bottom: 15px;
+			}
+			
+			#content .features{
+				margin-bottom: 30px;
+			}
+			
+			#content .nav{
+				justify-content: center;
+				margin-top: 8px;
+			}
+			
+			#content .nav a{
+				text-decoration: none;
+				color: #e15858;
+				border: 2px solid #e15858;
+				border-radius: 3px;
+				padding: 3px 8px;
+				font-weight: bold;
+				margin-left: 5px;
+			}
+			
+			#content .nav a:hover{
+				box-shadow: 1px 1px 6px -1px rgba(225,88,88,0.75);
+				-webkit-box-shadow: 1px 1px 6px -1px rgba(225,88,88,0.75);
+				-moz-box-shadow: 1px 1px 6px -1px rgba(225,88,88,0.75);
+			}
+			
+			@media screen and (max-width: 1400px){
+			
+				#content{
+					background-size: 75%;
+				}
+				
+			}
+			
+			@media screen and (max-width: 767px){
+				
+				#header{
+					padding: 20px;
+					text-align: center;
+					font-size: 30px;
+				}
+				
+				#content{
+					background-size: 257%;
+					background-position: left bottom;
+				}
+				
+				#content .overlay{
+					padding: 20px;
+					background-color: #00000057;
+				}
+				
+			}
+			
+		</style>
+
+	</head>
+
+	<body>
+	  
+		<div id="header">
+			Rock-Climbing Wall Builder
+		</div>
+		
+		<div id="content">
+			<div class="overlay">
+				<div class="center">
+					<div class="text">Robust JQuery plugin to make virtual climbing rock wall</div>
+					<div class="features">
+						Features
+						<ul>
+							<li>Both UI and Code based</li>
+							<li>Extensively Customizable</li>
+							<li>Light Weight 13kb</li>
+							<li>Easy to Integrate</li>
+							<li>Detailed Documentation</li>
+						</ul>
+					</div>
+					<div class="nav">
+						<a href="examples/index.html">Examples</a>
+						<a href="documentation/index.html" target="_blank">Documentation</a>
+						<a href="https://github.com/csc309-winter-2022/js-library-kokamihi">Download</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	  
+		
+	</body>
+</html>

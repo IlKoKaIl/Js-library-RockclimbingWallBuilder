@@ -1,0 +1,189 @@
+.climbify-container, .climbify-container *{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.climbify-container{
+	width: 100%;
+}
+
+.climbify-container .wall{
+	border: 3px solid #e7e0e0;
+}
+
+.climbify-container .wall .row{
+	display: flex;
+    flex-wrap: wrap;
+}
+
+.climbify-container .wall .row .column{
+	border: 1px solid #0000000a;
+	flex: 1;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	position: relative;
+	cursor: pointer
+}
+
+.climbify-container .wall.visible-grids .row .column{
+	border: 1px solid #f18282c9;
+}
+
+.climbify-container .wall.visible-grids{
+    border: 3px solid #ef9797;
+}
+
+.climbify-container .wall .row .column .hook{
+	background-size: contain;
+    cursor: pointer;
+    background-repeat: no-repeat;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.climbify-container .wall .row .column .hook.no-bg{
+	background-image: none !important;
+}
+
+.climbify-container .wall .row .column .hook .hook-number{
+	display: none;
+}
+
+.climbify-container .wall .row .column .hook .hook-number.show{
+	display: block;
+}
+
+.climbify-container .wall .row .column .step{
+	position: absolute;
+	font-size: 10px;
+    display: none;
+}
+
+.climbify-container .wall .row .column .step.right-hand{
+	top: 0;
+	right: 0;
+}
+
+.climbify-container .wall .row .column .step.left-hand{
+	top: 0;
+	left: 0;
+}
+
+.climbify-container .wall .row .column .step.right-feet{
+	bottom: 0;
+	right: 0;
+}
+
+.climbify-container .wall .row .column .step.left-feet{
+	bottom: 0;
+	left: 0;
+}
+
+.climbify-container .action-buttons{
+	text-align: center;
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.climbify-container .action-buttons button{
+	background-color: #f1eaea;
+    color: #db3636;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.climbify-container .action-buttons button.selected{
+	background-color: #db3636;
+    color: white;
+}
+
+.climbify-container .action-buttons .hook-helping-text{
+	color: #db3636;
+	display: none;
+}
+
+.climbify-container .action-buttons .add-route-form{
+	margin-top: 10px;
+    margin-bottom: 10px;
+	display: none;
+}
+
+.climbify-container .action-buttons .add-route-form input{
+	width: 100%;
+    padding: 3px 10px;
+}
+
+.climbify-container .action-buttons .add-route-form .route-steps{
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.climbify-container .action-buttons .add-route-form .route-steps .route-step{
+	display: flex;
+	text-align: center;
+}
+
+.climbify-container .action-buttons .add-route-form .route-steps .route-step > div{
+	padding: 2px;
+	flex: 1;
+}
+
+.climbify-container .action-buttons .add-route-form .route-steps .route-step .label{
+	font-size: 12px;
+	width: 100%;
+}
+
+.climbify-container .action-buttons .add-route-form .route-steps .route-step input{
+	text-align: center;
+    font-size: 13px;
+}
+
+.climbify-container .routes-selection{
+	display: flex;
+    flex-wrap: wrap;
+}
+
+.climbify-container .routes-selection .routes-dropdown{
+	flex: 1;
+}
+
+.climbify-container .routes-selection .routes-dropdown h3{
+	margin-bottom: 6px;
+}
+
+.climbify-container .routes-selection .routes-dropdown select{
+	width: 80%;
+    padding: 5px 7px;
+}
+
+.climbify-container .routes-selection .routes-steps{
+	padding-left: 5px;
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 10px;
+}
+
+.climbify-container .routes-selection .routes-steps .single-step{
+	flex-basis: 25%;
+	margin-bottom: 18px;
+}
+
+.climbify-container .routes-selection .routes-steps .single-step span{
+	background-color: #e7e7e7;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.climbify-container .routes-selection .routes-steps .single-step.selected span{
+	background-color: #999999;
+    color: white;
+}

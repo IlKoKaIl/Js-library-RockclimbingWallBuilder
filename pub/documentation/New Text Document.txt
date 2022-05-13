@@ -1,0 +1,151 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>WallClimbing Plugin</title>
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+		<style>
+		
+			.container{
+				max-width: 700px;
+			}
+			
+			code, pre {
+				font-family: Consolas,"courier new";
+				color: crimson;
+				background-color: #f1f1f1;
+				padding: 2px;
+				font-size: 105%;
+			}
+		
+		</style>
+
+	</head>
+
+	<body>
+	  
+		<div class="container mt-5 mb-5">
+		
+			<h2 class="text-center">Plugin Documentation</h2>
+			
+			<h4 class="mt-5">Introduction</h4>
+			<p class="">This plugin is designed to make climbing wall, hooks on it and routes in creative way. 
+			It is very easy to integrate with any html page. It just requires JQuery to run, No Other Dependencies</p>
+			
+			<h4 class="mt-5">Key Features</h4>
+			<ul class="">
+				<li>Create Climbing Wall  with custom Horizontal and Vertical Grids</li>
+				<li>Create as many as hooks just by specify grid's row and column</li>
+				<li>Create as many as routes by just provide an object of simple JavaScript</li>
+			</ul>
+			
+			<h4 class="mt-5">Integration</h4>
+			<p class="">This plugin just requires JQuery to work. If JQuery not already included you can include from here:</p>
+			<code>https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js</code>
+			
+			<p class="mt-3">Include CSS and JS files of plugin</p> 
+			<code>css/wallClimbify.css</code><br><br>
+			<code>js/WallClimbify.js</code>
+			
+			<h4 class="mt-5">Usage</h4>
+			
+			<p class="">First need to create a div</p>
+			<code>&lt;div id="wall-climbing"&gt;&lt;/div&gt;</code>
+			
+			<p class="mt-3">To create a Wall inside div</p>
+			<code>$wall = $("#wall-climbing").createWall(wall_data);</code>
+			
+			<p class="mt-3">It will create a wall inside div and return wall's object which will be used later. <code>wall_data</code> is an object which parameters are below:</p>
+			
+				<pre>
+let wall_data = {
+    number_of_rows: 10,  // max horizontal number of hooks - required
+    number_of_columns: 10,   // max verticle number of hooks - required
+    height_of_row: 50,   // height of row - optional
+    background_color: '#ed4a4a',  // optional
+    background_image: 'images/bg.jpg',  // optional
+}
+				</pre>
+			
+			<p class="mt-5">To create hooks, call hook's add function using wall's object</p>
+			<code>$wall.addHooks(hooks);</code>
+			
+			<p class="mt-3"><code>hooks</code> is an object which carry hooks data, it's parameters are as below:</p>
+			<pre>
+let hooks = [
+    {
+        row: 1,   // which row want to create hook - top to bottom numbers - required
+        column: 1,   // which row column to create hook - left to right numbers - required
+        hook_image: 'images/hook_image.png',   // any custom image - optional
+        hook_width: '20',  // custom hook width in number - optional
+        hook_height: '20' // custom hook height in number - optional
+    },
+    {
+       row: 2,
+        column: 3
+    }
+]
+				</pre>
+				
+				<p class="mt-5">To create route, call routes's add function using wall's object, It will return created route's object, which carries information about new route</p>
+				<code>let route = $wall.addRoute(route_data);</code>
+			
+				<p class="mt-3"><code>route_data</code> is an object which carry routes data which will be passed to plugin in order to create route, it's parameters are as below:</p>
+			<pre>
+let route_data = {    
+    'route_name': 'Route 1',
+    'steps': [
+        {
+            lh:{
+                row: 9,
+                column: 1
+            },
+            rh: {
+                row: 10,
+                column: 3
+            }
+        },
+        {
+            lh:{
+                row: 9,
+                column: 1
+            },
+            rh: {
+                row: 10,
+                column: 3
+            },
+            lf:{
+                row: 10,
+                column: 3
+            },
+            rf:{
+                row: 9,
+                column: 4
+            }
+        }
+    ]
+}
+				</pre>
+				
+				<p class="mt-3">Here <code>route_name</code> is route's name and <code>steps</code> is an array of one by one step of route. Here</p>
+				<ul>
+					<li><code>lh</code> represents left hand</li>
+					<li><code>rh</code> represents right hand</li>
+					<li><code>lf</code> represents left feet</li>
+					<li><code>rf</code> represents right feet</li>
+				</ul>
+				
+				<p class="mt-3">In every step one of <code>lh, rh, lf, rf</code> is required to create step</p>
+			
+		
+		</div>		
+	  
+		
+	</body>
+</html>
